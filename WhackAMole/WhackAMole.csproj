@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomClasses\IntVector2.cs" />
+    <Compile Include="GameObjects\GameButton.cs" />
     <Compile Include="GameObjects\GameController.cs" />
+    <Compile Include="GameObjects\MenuObject.cs" />
     <Compile Include="GameObjects\Mole.cs" />
     <Compile Include="MainActivity.cs">
       <SubType>Code</SubType>

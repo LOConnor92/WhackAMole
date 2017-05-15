@@ -27,6 +27,41 @@ namespace WhackAMole
 
         void OnTouched(List<CCTouch> touches, CCEvent e)
         {
+            switch(GameController.self.currentState)
+            {
+                case GameState.Menu:
+                    break;
+                case GameState.Difficulty:
+                    break;
+                case GameState.Settings:
+                    break;
+                case GameState.Game:
+                    GameController.self.OnTouched(touches[0]);
+                    break;
+                case GameState.GameOver:
+                    break;
+            }
+        }
+
+        public void AddMoleAsChild(Mole m)
+        {
+            AddChild(m);
+        }
+
+        void SwapGameState (GameState newState)
+        {
+            // Change to new state
+            GameController.self.currentState = newState;
+
+            // Remove current children
+            RemoveAllChildren();
+
+            // Sets the new scene up
+            HandleNewState();
+        }
+
+        void HandleNewState()
+        {
 
         }
     }

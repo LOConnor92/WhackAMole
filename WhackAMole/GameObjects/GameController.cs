@@ -59,13 +59,19 @@ namespace WhackAMole
         // Initialise the game
         public void InitializeGame(Difficulty difficulty, List<IntVector2> positions)
         {
+            // Make sure mole list is empty
+            moles.Clear();
+
             // Create all the moles
             for (int i = 0; i < positions.Count; i++)
             {
                 Mole m = new Mole(moleChoice);
+                m.AnchorPoint = CCPoint.AnchorLowerLeft;
                 m.PositionX = positions[i].x;
                 m.PositionY = positions[i].y;
                 AddMoleAsChild(m);
+
+                moles.Add(m);
             }
 
             // Set up lives
